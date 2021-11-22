@@ -8,11 +8,17 @@ import ConverterService from './converter-service.js';
 $(document).ready(function() {
     $("#currency-form").submit(function(event) {
       event.preventDefault();
-      //let currency = $('#currency').val();
+      let currency = $('#currency').val();
       //let amount = $('#amount').val();
       ConverterService.getCurrency()
       .then(function(response) {
-        console.log(response)
+        let rates = response.conversion_rates;
+        let rateEntries = Object.entries(rates);
+        rateEntries.forEach(function(entry){
+          if(entry[0] === currency){
+            console.log(true)
+          }
+        })
       })
     })
 });
