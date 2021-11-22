@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // new line
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -8,12 +9,13 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  devtool: 'eval-source-map',  // new line
-  devServer: {                 // new line
-    contentBase: './dist'      // new line
+  devtool: 'eval-source-map',  
+  devServer: {                 
+    contentBase: './dist'      
   },
   plugins: [
-    new CleanWebpackPlugin(), // new line
+    new CleanWebpackPlugin(),
+    new Dotenv(),
     new HtmlWebpackPlugin({
       title: 'Shape Tracker',
       template: './src/index.html',
