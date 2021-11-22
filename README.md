@@ -18,7 +18,7 @@
 
 ## Description
 
-_{.}_
+_{Enter a currency abbreviation and amount you want converted to the new currency. The converter will convert the amount to the new currency.}_
 
 ## Setup/Installation Requirements
 
