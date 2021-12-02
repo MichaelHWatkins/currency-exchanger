@@ -1,6 +1,6 @@
 export default class ConverterService {
-  static getCurrency(){
-    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/USD`)
+  static getCurrency(unit){
+    return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${unit}`)
     .then(function(response) {
       if(!response.ok) {
         throw Error(response.statusText);
